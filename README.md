@@ -11,19 +11,19 @@ The first project (SpriteAnimator) uses iOS' CADisplayLink as base concept of a 
 You do not need need to know more about the iOS frameworks to create your own animation.
 It shows some great ruby language advantages like:
 
-class CGRect
-  def to_s
-    "(#{origin.x},#{origin.y})-(#{origin.x+size.width},#{origin.y+size.height})" 
-  end
-end
+    class CGRect
+      def to_s
+        "(#{origin.x},#{origin.y})-(#{origin.x+size.width},#{origin.y+size.height})" 
+      end
+    end
 
 CGRect originally is a C-struct. With RubyMotion you can handle it as a class.
 This app shows 10 sprites moving around the screen. You can increase the number of sprites to i.e. 1000 setting @@NUM_SPRITES=1000 in ViewController. With more than 10 sprites the collision handling is switched off automatically (of cause you can change this behavior as you need).
 
-Usage:
-$ cd SpriteAnimator
-$ rake # shows iPhone simulator
-$ rake simulator device_family=ipad# shows iPad simulator
+Usage:  
+$ cd SpriteAnimator  
+$ rake # shows iPhone simulator  
+$ rake simulator device_family=ipad # shows iPad simulator  
 
 
 LICENSE
