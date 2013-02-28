@@ -20,7 +20,7 @@ class ViewController < UIViewController
 
     @sprites=Array.new
     (1..@@NUM_SPRITES).each do |i|
-      sprite=Sprite.alloc.init("kk.png", @canvas)
+      sprite=Sprite.alloc.initWithImage("kk.png", @canvas)
       sc=SpriteController.new(i,0,0,@screenWidth, @screenHeight, sprite)
       if @collision_check_on
         collides=true
@@ -36,6 +36,7 @@ class ViewController < UIViewController
       sc.add_movement SinusMovement.new if r==1 || r==2
       sc.add_movement LinearMovement.new if r==0 || r==2
       @sprites << sc
+
     end
 
     @game_engine_caller = CADisplayLink.displayLinkWithTarget(self, selector:'game_engine')

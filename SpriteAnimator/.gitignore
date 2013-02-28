@@ -1,5 +1,6 @@
 .repl_history
 build
+.redcar
 resources/*.nib
 resources/*.momd
 resources/*.storyboardc

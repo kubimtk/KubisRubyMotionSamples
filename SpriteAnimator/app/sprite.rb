@@ -6,17 +6,18 @@ end
 
 class Sprite < UIView
   attr_reader :width, :height, :scale
-  def init(imageName, parentView)
-    super()
+  def initWithImage(imageName, parentView)
     @img = UIImage.imageNamed(imageName)
-
     @pic = UIImageView.alloc.initWithImage(@img)
-    self.addSubview(@pic)
-    parentView.addSubview self
+
     @width = @img.size.width
     @height = @img.size.height
     #puts "KKK: @width=#{@width} @height=#{@height} "
     @scale = 1
+    if self.init
+      self.addSubview(@pic)
+      parentView.addSubview self
+    end
     self
   end
 
